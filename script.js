@@ -63,5 +63,5 @@ function enter(){
 function backspace(){
 var rowBoxes = document.getElementById("row"+rows).children.value;
 document.getElementById("row"+rows).children.value=rowBoxes.substring(0,rowBoxes.length-1);
-console.log('is beingcalled')
+console.log('baked potatoe')
 }
