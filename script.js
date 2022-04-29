@@ -38,27 +38,28 @@ function wordSelect(letter){
 
 function enter(){
 	let rowBoxes = document.getElementById("row"+rows).children;
-//	if(list.includes(currentWord)){
+	if(list.includes(currentWord)){
 		//colourBoxes();
 		for(var i=0;i<5;i++){
+		currentLetter = document.getElementById(currentWord[i].toLowerCase());
 			if(currentWord[i]==words[wSelector][i]){
 				rowBoxes[i].classList.add("rlrp");
-  				wordSelect(letter).classList.add("rlrp");
+  				currentLetter.classList.add("rlrp");
 			}	
 			else if(words[wSelector].includes(currentWord[i])){	
 				rowBoxes[i].classList.add("rlwp");
-				wordSelect(letter).classList.add("rlwp");
+				currentLetter.classList.add("rlwp");
 			}
 			else{
 				rowBoxes[i].classList.add("wlwp");
-				wordSelect(letter).classList.add("wlwp");
+				currentLetter.classList.add("wlwp");
 			}
 		}	
 		rows++;
-//	} else {
-//		for(var i=0;i<5;i++){
-//				rowBoxes[i].innerText='';
-//		}	}
+	} else {
+		for(var i=0;i<5;i++){
+				rowBoxes[i].innerText='';
+		}	}
 	currentWord=''; }
 function backspace(){
 var rowBoxes = document.getElementById("row"+rows).children.value;

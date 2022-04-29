@@ -1,6 +1,6 @@
 .body {
 	border: none;
-	color: white;
+	color: black;
 	padding: 16px 32px;
 	text-align: center;
 	text-decoration: none;
@@ -11,7 +11,6 @@
 	cursor: pointer;
 }
 .body{
-	background-color: white;
 	color: black;
 	border: 2px solid	#00FF00;
 }
@@ -19,23 +18,21 @@
 	background-color: #00FF00;
 	color: black;
 }
-.wlwp{
+#guessRows div div.wlwp, .wlwp{
 	background-color: #A9A9A9;
-	color: white;
 }
-.rlwp{
+#guessRows div div.rlwp, .rlwp {
 	background-color: #FFFF00;
-	color: white;
 }
-.rlrp{
+#guessRows div div.rlrp, .rlrp {
 	background-color: #32CD32;
-	color: white;
 }
-#guessrows div div{
-	width: 5px;
+#guessRows div div{
+	width: 2px;
 	height: 25px;
 	border: 1px solid #888888;
 	color: black;
+	background-color: white;
 	padding: 16px 32px;
 	vertical-align: center;
 	text-align: center;
@@ -48,9 +45,9 @@
 	transition-duration: 1s;
 	cursor: pointer;
 }
-#keyboard div button{
-	width: 10px;
-	height: 10px;
+#Keyboard div button{
+	width: 30px;
+	height: 50px;
 	border: 1px solid #888888;
 	color: black;
 	padding: 16px 32px;
@@ -62,6 +59,4 @@
 	font-family: Arial;
 	transition-duration: 1s;
 	cursor: pointer;
-}
-.backspace {
 }

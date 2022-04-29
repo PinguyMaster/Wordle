@@ -1,28 +1,27 @@
 <html>
 	<head>
 		<link href="style.css" rel="stylesheet" type="text/css">
-<style>
+		<style>
 #title {
 	text-align: center;
 	font-weight: 900;
 	font-size: 50;
 	font-family: courier;
 }
-
-</style>
-<title>Wordle</title>
+		</style>
+		<title>Wordle</title>
 	</head>
 	<body>
 		<div id="title">Wordle</div>
 		<div id="guessRows">
 			<div id="row1">
 				<div id="r1l1" class="guessBox num1"></div>
-				<div id="r1l2"class="guessBox num2"></div>
-				<div id="r1l3"class="guessBox num3"></div>
-				<div id="r1l4"class="guessBox num4"></div>
-				<div id="r1l5"class="guessBox num5"></div>
-			</div>	
-			<div id="row2">
+				<div id="r1l2" class="guessBox num2"></div>
+				<div id="r1l3" class="guessBox num3"></div>
+				<div id="r1l4" class="guessBox num4"></div>
+				<div id="r1l5" class="guessBox num5"></div>
+			</div>
+			<div id="row2">  
 				<div id="r2l1" class="guessBox num1"></div>
 				<div id="r2l2" class="guessBox num2"></div>
 				<div id="r2l3" class="guessBox num3"></div>
@@ -82,7 +81,6 @@
 				<button id="k" onclick="wordSelect('K')">K</button>
 				<button id="l" onclick="wordSelect('L')">L</button>
 			</div>
-			<button id="enter" onclick="enter()">Enter</button>
 			<div id="zxcvbnm">
 				<button id="z" onclick="wordSelect('Z')">Z</button>
 				<button id="x" onclick="wordSelect('X')">X</button>
@@ -91,9 +89,10 @@
 				<button id="b" onclick="wordSelect('B')">B</button>
 				<button id="n" onclick="wordSelect('N')">N</button>
 				<button id="m" onclick="wordSelect('M')">M</button>
-				<button id="enter" onclick="enter()">ENTER</button>
-				<button id="backspace" onclick="backspace()">BACKSPACE</button>
+			</div>
+			<button id="enter" onclick="enter()">Enter</button>
+			<button id="backspace" onclick="backspace()">Backspace</button>
+			<script src="script.js"></script>
 		</div>
-		<script src="script.js"></script>
 	</body>
 </html>
