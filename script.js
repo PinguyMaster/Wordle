@@ -20,11 +20,18 @@ if ("e"==words[wSelector][1])
 }
 var rows=1;
 function wordSelect(letter){
-	if(currentWord.length<5){
+	if(letter!='b'){
+    if(currentWord.length<5){
 		currentWord = currentWord + letter;
 		console.log("Letter: " + letter);
 		console.log("Word: " + currentWord);
-	}
+  	}
+  }	else{
+    if(currentWord.length<=5){
+		currentWord = currentWord.slice(0, -1);
+		console.log("Word: " + currentWord);
+  	}
+  }
 		let rowBoxes = document.getElementById("row"+rows).children;
 		for(var i=0;i<5;i++){
 			if (i < currentWord.length) {
