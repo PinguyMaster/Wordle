@@ -12,8 +12,21 @@
 		<title>Wordle</title>
 	</head>
 	<body>
-		<div id="title">Wordle</div>
-		<div id="guessRows">
+    <div class="container">
+      <div class="popup"id="popup">
+        <img src="tick.png">
+        <h2>WellDone</h2>
+        <p>You got it right</p>
+        <button type="button"class="p-button"onclick="closePopup()">Close</button>
+      </div>
+      <div class="wrong"id="wRong">
+        <img src="wrong.png">
+        <h2>Unlucky</h2>
+        <p>You got it wrong</p>
+        <button type="button"class="wrong-button"onclick="closeWrong()">Close</button>
+      </div>
+		<div id="title"style="color:white;">Wordle</div>
+		<div id="guessRows"class="gRowsCenter">
 			<div id="row1">
 				<div id="r1l1" class="guessBox num1"></div>
 				<div id="r1l2" class="guessBox num2"></div>
@@ -57,7 +70,7 @@
 				<div id="r6l5" class="guessBox num5"></div>
 			</div>	
 		</div>
-		<div id="Keyboard">
+		<div id="Keyboard"class="keyBoardCenter">
 			<div id="qwertyuiop">
 				<button id="q" onclick="wordSelect('Q')">Q</button>
 				<button id="w" onclick="wordSelect('W')">W</button>
@@ -90,9 +103,10 @@
 				<button id="n" onclick="wordSelect('N')">N</button>
 				<button id="m" onclick="wordSelect('M')">M</button>
 			</div>
-			<button id="enter" onclick="enter()">Enter</button>
-			<button id="backspace" onclick="wordSelect('b')">Backspace</button>
+			<button id="enter" class="enterBackspace" onclick="enter()">Enter</button>
+			<button id="backspace" class="enterBackspace" onclick="wordSelect('b')">Backspace</button>
 			<script src="script.js"></script>
 		</div>
+    </div>
 	</body>
 </html>

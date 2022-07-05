@@ -10,8 +10,9 @@
                         xmlhttp.open("GET", url, true);
                         xmlhttp.send();
 
+var win = false;
 const words = ["HELLO","STRIN","VARIA"];
-var wSelector = Math.floor(Math.random() * 3);
+var wSelector = Math.floor(Math.random() *3);
 var currentWord="";
 console.log(words[wSelector][1]);
 if ("e"==words[wSelector][1])
@@ -42,32 +43,58 @@ function wordSelect(letter){
 			//console.log(count);
 		}
 }
+let wRong = document.getElementById("wRong");
+function openWrong(){
+  wRong.classList.add("wrong-open");
+}
+function closeWrong(){
+  wRong.classList.remove("wrong-open");
+}
+let popup = document.getElementById("popup");
+function openPopup() {
+  popup.classList.add("popup-open");
+}
+function closePopup() {
+  popup.classList.remove("popup-open");
+}
 
+const keyboard = document.getElementById("Keyboard");
 function enter(){
 	let rowBoxes = document.getElementById("row"+rows).children;
 	if(list.includes(currentWord)){
 		//colourBoxes();
 		for(var i=0;i<5;i++){
 		currentLetter = document.getElementById(currentWord[i].toLowerCase());
-			if(currentWord[i]==words[wSelector][i]){
+			if(currentWord[i]==list[wSelector][i]){
 				rowBoxes[i].classList.add("rlrp");
-  				currentLetter.classList.add("rlrp");
+  			currentLetter.classList.add("rlrp");
 			}	
-			else if(words[wSelector].includes(currentWord[i])){	
+			else if(list[wSelector].includes(currentWord[i])){	
 				rowBoxes[i].classList.add("rlwp");
 				currentLetter.classList.add("rlwp");
 			}
-			else{
+     		else{
 				rowBoxes[i].classList.add("wlwp");
 				currentLetter.classList.add("wlwp");
-			}
+
+			} 
+      if(list[wSelector].toLowerCase()==currentWord.toLowerCase())
+      {
+        openPopup();
+        keyboard.setAttribute('disabled','');
+      }	
 		}	
 		rows++;
+    if (rows==7 &&list[wSelector].toLowerCase()!=currentWord.toLowerCase()){
+    openWrong();
+    }
 	} else {
 		for(var i=0;i<5;i++){
 				rowBoxes[i].innerText='';
 		}	}
 	currentWord=''; }
+
+
 function backspace(){
 var rowBoxes = document.getElementById("row"+rows).children.value;
 document.getElementById("row"+rows).children.value=rowBoxes.substring(0,rowBoxes.length-1);
