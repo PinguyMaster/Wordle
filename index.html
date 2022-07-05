@@ -1,11 +1,11 @@
-<html>
+<!DOCTYPE html>
 	<head>
 		<link href="style.css" rel="stylesheet" type="text/css">
 		<style>
 #title {
 	text-align: center;
 	font-weight: 900;
-	font-size: 50;
+	font-size: 50px;
 	font-family: courier;
 }
 		</style>
@@ -13,20 +13,22 @@
 	</head>
 	<body>
     <div class="container">
-      <div class="popup"id="popup">
+      <div class="popup" id="popup">
         <img src="tick.png">
         <h2>WellDone</h2>
         <p>You got it right</p>
-        <button type="button"class="p-button"onclick="closePopup()">Close</button>
+        <p>Refresh for a new challenge</p>
+        <button type="button" class="p-button" onclick="closePopup()">Close</button>
       </div>
-      <div class="wrong"id="wRong">
+      <div class="wrong" id="wRong">
         <img src="wrong.png">
         <h2>Unlucky</h2>
         <p>You got it wrong</p>
-        <button type="button"class="wrong-button"onclick="closeWrong()">Close</button>
+        <p class="rightWord"></p>
+        <button type="button" class="wrong-button" onclick="closeWrong()">Close</button>
       </div>
-		<div id="title"style="color:white;">Wordle</div>
-		<div id="guessRows"class="gRowsCenter">
+		<div id="title" style="color:white;">Wordle</div>
+		<div id="guessRows" class="gRowsCenter">
 			<div id="row1">
 				<div id="r1l1" class="guessBox num1"></div>
 				<div id="r1l2" class="guessBox num2"></div>
@@ -70,7 +72,7 @@
 				<div id="r6l5" class="guessBox num5"></div>
 			</div>	
 		</div>
-		<div id="Keyboard"class="keyBoardCenter">
+		<div id="Keyboard" class="keyBoardCenter">
 			<div id="qwertyuiop">
 				<button id="q" onclick="wordSelect('Q')">Q</button>
 				<button id="w" onclick="wordSelect('W')">W</button>
