@@ -12,16 +12,11 @@
 
 var win = false;
 const words = ["HELLO","STRIN","VARIA"];
-var wSelector = Math.floor(Math.random() *3);
+var wSelector = Math.floor(Math.random() *2499);
 var currentWord="";
-console.log(words[wSelector][1]);
-if ("e"==words[wSelector][1])
-{
-	          console.log("random Flag 1234567");
-}
 var rows=1;
 function wordSelect(letter){
-	if(letter!='b'){
+	if(letter!='b'&&win==false){
     if(currentWord.length<5){
 		currentWord = currentWord + letter;
 		console.log("Letter: " + letter);
@@ -81,7 +76,7 @@ function enter(){
       if(list[wSelector].toLowerCase()==currentWord.toLowerCase())
       {
         openPopup();
-        keyboard.setAttribute('disabled','');
+        win=true;
       }	
 		}	
 		rows++;
@@ -93,10 +88,3 @@ function enter(){
 				rowBoxes[i].innerText='';
 		}	}
 	currentWord=''; }
-
-
-function backspace(){
-var rowBoxes = document.getElementById("row"+rows).children.value;
-document.getElementById("row"+rows).children.value=rowBoxes.substring(0,rowBoxes.length-1);
-console.log('baked potatoe')
-}
